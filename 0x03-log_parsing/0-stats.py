@@ -32,12 +32,14 @@ def main():
             # Validate and extract information
             if len(parts) >= 9:
                 try:
+                    # Update file size and count status codes
                     file_size += int(parts[-1])
                     status_code = int(parts[-2])
+
                     if status_code in st_codes:
                         st_codes[status_code] += 1
                 except ValueError:
-                    continue
+                    continue  # Skip lines with invalid data
 
             line_count += 1
 
@@ -49,7 +51,7 @@ def main():
         print_stats(file_size, st_codes)
         raise
 
-    # Final stats
+    # Print final stats
     print_stats(file_size, st_codes)
 
 
