@@ -5,6 +5,9 @@ Function to generate Pascal's Triangle up to a given number of rows.
 
 
 def pascal_triangle(n):
+    """
+    Function to generate Pascal's Triangle up to a given number of rows.
+    """
     if n <= 0:
         return []
 
